@@ -1,14 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:untitled8/Components/JugeSignUp/Juge_sign_up_form_3.dart';
 import 'package:untitled8/UI/roundbuttons.dart';
 import 'package:flutter/material.dart';
 
-class JudgeSignUpForm2 extends StatefulWidget {
-  const JudgeSignUpForm2({super.key});
+import 'lawyer_signup_form_2.dart';
+
+class LawyerSignUpForm1 extends StatefulWidget {
+  const LawyerSignUpForm1({super.key});
 
   @override
-  State<JudgeSignUpForm2> createState() => _JudgeSignUpForm2State();
+  State<LawyerSignUpForm1> createState() => _LawyerSignUpForm1State();
 }
 
 bool loading = false;
@@ -16,7 +17,7 @@ TextEditingController cnicController = TextEditingController();
 TextEditingController passwordController = TextEditingController();
 final controller = PageController(viewportFraction: 0.8, keepPage: true);
 
-class _JudgeSignUpForm2State extends State<JudgeSignUpForm2> {
+class _LawyerSignUpForm1State extends State<LawyerSignUpForm1> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -75,17 +76,6 @@ class _JudgeSignUpForm2State extends State<JudgeSignUpForm2> {
                   Container(
                     //color: Colors.green,
                     height: 10,
-                    width: 30,
-                    decoration: BoxDecoration(
-                        color: Color(0xFFD9D9D9),
-                        borderRadius: BorderRadius.circular(20)),
-                  ),
-                  SizedBox(
-                    width: 4,
-                  ),
-                  Container(
-                    //color: Colors.green,
-                    height: 10,
                     width: 10,
                     decoration: BoxDecoration(
                         color: Color(0xFF114001),
@@ -102,13 +92,24 @@ class _JudgeSignUpForm2State extends State<JudgeSignUpForm2> {
                         color: Color(0xFFD9D9D9),
                         borderRadius: BorderRadius.circular(20)),
                   ),
+                  SizedBox(
+                    width: 4,
+                  ),
+                  Container(
+                    //color: Colors.green,
+                    height: 10,
+                    width: 30,
+                    decoration: BoxDecoration(
+                        color: Color(0xFFD9D9D9),
+                        borderRadius: BorderRadius.circular(20)),
+                  ),
                 ],
               ),
               SizedBox(height: 20),
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  Text("Address",
+                  Text("Name",
                       style: TextStyle(
                           fontSize: 14,
                           color: Color.fromARGB(255, 96, 96, 96))),
@@ -127,7 +128,7 @@ class _JudgeSignUpForm2State extends State<JudgeSignUpForm2> {
                               255, 169, 169, 169)), //<-- SEE HERE
                       borderRadius: BorderRadius.circular(10),
                     ),
-                    hintText: "Enter Your Address",
+                    hintText: "Enter Your Name",
                     hintStyle: TextStyle(color: Colors.grey)),
               ),
               SizedBox(
@@ -136,7 +137,35 @@ class _JudgeSignUpForm2State extends State<JudgeSignUpForm2> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  Text("City",
+                  Text("CNIC",
+                      style: TextStyle(
+                          fontSize: 14,
+                          color: Color.fromARGB(255, 96, 96, 96))),
+                ],
+              ),
+              TextFormField(
+                maxLength: 13,
+                controller: passwordController,
+                keyboardType: TextInputType.number,
+                decoration: InputDecoration(
+                    counterText: "",
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                          width: 1,
+                          color: Color.fromARGB(
+                              255, 169, 169, 169)), //<-- SEE HERE
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    hintText: "Enter Your CNIC",
+                    hintStyle: TextStyle(color: Colors.grey)),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Text("Email",
                       style: TextStyle(
                           fontSize: 14,
                           color: Color.fromARGB(255, 96, 96, 96))),
@@ -155,42 +184,14 @@ class _JudgeSignUpForm2State extends State<JudgeSignUpForm2> {
                               255, 169, 169, 169)), //<-- SEE HERE
                       borderRadius: BorderRadius.circular(10),
                     ),
-                    hintText: "Enter Your City",
-                    hintStyle: TextStyle(color: Colors.grey)),
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Text("Judge No",
-                      style: TextStyle(
-                          fontSize: 14,
-                          color: Color.fromARGB(255, 96, 96, 96))),
-                ],
-              ),
-              TextFormField(
-                maxLength: 13,
-                controller: passwordController,
-                keyboardType: TextInputType.number,
-                decoration: InputDecoration(
-                    counterText: "",
-                    enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                          width: 1,
-                          color: Color.fromARGB(
-                              255, 169, 169, 169)), //<-- SEE HERE
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    hintText: "Enter Judge No",
+                    hintText: "Email",
                     hintStyle: TextStyle(color: Colors.grey)),
               ),
               SizedBox(height: 20),
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  Text("Bar Council NO",
+                  Text("DOB",
                       style: TextStyle(
                           fontSize: 14,
                           color: Color.fromARGB(255, 96, 96, 96))),
@@ -199,8 +200,9 @@ class _JudgeSignUpForm2State extends State<JudgeSignUpForm2> {
               TextFormField(
                 maxLength: 13,
                 controller: passwordController,
-                keyboardType: TextInputType.number,
+                keyboardType: TextInputType.datetime,
                 decoration: InputDecoration(
+                    suffixIcon: Icon(Icons.calendar_today_rounded),
                     counterText: "",
                     enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(
@@ -209,7 +211,7 @@ class _JudgeSignUpForm2State extends State<JudgeSignUpForm2> {
                               255, 169, 169, 169)), //<-- SEE HERE
                       borderRadius: BorderRadius.circular(10),
                     ),
-                    hintText: "Bar Council NO",
+                    hintText: "DD/MM/YY",
                     hintStyle: TextStyle(color: Colors.grey)),
               ),
               SizedBox(
@@ -222,11 +224,13 @@ class _JudgeSignUpForm2State extends State<JudgeSignUpForm2> {
                   height: 50,
                   width: 450,
                   onTap: () {
+                    setState(() {
+                      loading = true;
+                    });
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) =>
-                                const JudgeSignUpForm3()));
+                            builder: (context) => const LawyerSignUpForm2()));
                   }),
               SizedBox(height: 5),
               Row(

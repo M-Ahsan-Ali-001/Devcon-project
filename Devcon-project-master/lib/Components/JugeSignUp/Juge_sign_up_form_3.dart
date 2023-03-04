@@ -5,12 +5,11 @@ import 'package:flutter/material.dart';
 
 import 'Juge_Sign_up_form_2.dart';
 
-
-class Jform3 extends StatefulWidget {
-  const Jform3({super.key});
+class JudgeSignUpForm3 extends StatefulWidget {
+  const JudgeSignUpForm3({super.key});
 
   @override
-  State<Jform3> createState() => _Jform3State();
+  State<JudgeSignUpForm3> createState() => _JudgeSignUpForm3State();
 }
 
 bool loading = false;
@@ -18,7 +17,7 @@ TextEditingController cnicController = TextEditingController();
 TextEditingController passwordController = TextEditingController();
 final controller = PageController(viewportFraction: 0.8, keepPage: true);
 
-class _Jform3State extends State<Jform3> {
+class _JudgeSignUpForm3State extends State<JudgeSignUpForm3> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -80,40 +79,32 @@ class _Jform3State extends State<Jform3> {
                     width: 30,
                     decoration: BoxDecoration(
                         color: Color(0xFFD9D9D9),
-                        borderRadius: BorderRadius.circular(20)
-                    ),
-
-
+                        borderRadius: BorderRadius.circular(20)),
                   ),
-                  SizedBox(width: 4,),
+                  SizedBox(
+                    width: 4,
+                  ),
                   Container(
                     //color: Colors.green,
                     height: 10,
                     width: 30,
                     decoration: BoxDecoration(
                         color: Color(0xFFD9D9D9),
-                        borderRadius: BorderRadius.circular(20)
-                    ),
-
-
+                        borderRadius: BorderRadius.circular(20)),
                   ),
-
-                  SizedBox(width: 4,),
+                  SizedBox(
+                    width: 4,
+                  ),
                   Container(
                     //color: Colors.green,
                     height: 10,
                     width: 10,
                     decoration: BoxDecoration(
                         color: Color(0xFF114001),
-                        borderRadius: BorderRadius.circular(100)
-                    ),
-
-
+                        borderRadius: BorderRadius.circular(100)),
                   ),
-
                 ],
               ),
-
               SizedBox(height: 20),
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -196,8 +187,6 @@ class _Jform3State extends State<Jform3> {
                     hintText: "Confirm Password",
                     hintStyle: TextStyle(color: Colors.grey)),
               ),
-
-
               SizedBox(height: 5),
               RoundButton(
                   title: 'SignUp',
@@ -208,10 +197,10 @@ class _Jform3State extends State<Jform3> {
                     setState(() {
                       loading = true;
                     });
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => const Jform2()));
-
-
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const JudgeSignUpForm2()));
                   }),
               SizedBox(height: 5),
               Row(
@@ -225,9 +214,7 @@ class _Jform3State extends State<Jform3> {
                             color: Colors.grey, fontWeight: FontWeight.w400),
                       )),
                   TextButton(
-                      onPressed: () {
-
-                      },
+                      onPressed: () {},
                       child: Text("Sign In",
                           style: TextStyle(
                               color: Color.fromARGB(255, 28, 100, 3),

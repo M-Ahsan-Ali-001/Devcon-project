@@ -1,14 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:untitled8/Components/JugeSignUp/Juge_sign_up_form_3.dart';
+import 'package:untitled8/Components/LawyerSignUp/lawyer_signup_form_3.dart';
 import 'package:untitled8/UI/roundbuttons.dart';
 import 'package:flutter/material.dart';
 
-class JudgeSignUpForm2 extends StatefulWidget {
-  const JudgeSignUpForm2({super.key});
+class LawyerSignUpForm2 extends StatefulWidget {
+  const LawyerSignUpForm2({super.key});
 
   @override
-  State<JudgeSignUpForm2> createState() => _JudgeSignUpForm2State();
+  State<LawyerSignUpForm2> createState() => _LawyerSignUpForm2State();
 }
 
 bool loading = false;
@@ -16,7 +17,7 @@ TextEditingController cnicController = TextEditingController();
 TextEditingController passwordController = TextEditingController();
 final controller = PageController(viewportFraction: 0.8, keepPage: true);
 
-class _JudgeSignUpForm2State extends State<JudgeSignUpForm2> {
+class _LawyerSignUpForm2State extends State<LawyerSignUpForm2> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -164,7 +165,7 @@ class _JudgeSignUpForm2State extends State<JudgeSignUpForm2> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  Text("Judge No",
+                  Text("Lawyer No",
                       style: TextStyle(
                           fontSize: 14,
                           color: Color.fromARGB(255, 96, 96, 96))),
@@ -190,7 +191,7 @@ class _JudgeSignUpForm2State extends State<JudgeSignUpForm2> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  Text("Bar Council NO",
+                  Text("Bar Council No",
                       style: TextStyle(
                           fontSize: 14,
                           color: Color.fromARGB(255, 96, 96, 96))),
@@ -226,7 +227,7 @@ class _JudgeSignUpForm2State extends State<JudgeSignUpForm2> {
                         context,
                         MaterialPageRoute(
                             builder: (context) =>
-                                const JudgeSignUpForm3()));
+                                const LawyerSignUpForm3()));
                   }),
               SizedBox(height: 5),
               Row(
