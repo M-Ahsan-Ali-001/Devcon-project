@@ -1,6 +1,8 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:untitled8/portal/portal.dart';
+import 'package:untitled8/Components/SignUp_page.dart';
 import 'package:untitled8/Components/signin_page.dart';
 
 class Opening extends StatefulWidget {
@@ -137,7 +139,7 @@ class _OpeningState extends State<Opening> with TickerProviderStateMixin {
           child: FloatingActionButton(
             onPressed: () {
               Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => const SignIn()));
+                  MaterialPageRoute(builder: (context) => const Portal()));
             },
             backgroundColor: Colors.white24,
             child: Icon(

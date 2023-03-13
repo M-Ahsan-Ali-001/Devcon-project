@@ -1,0 +1,136 @@
+child: SingleChildScrollView(
+          physics: const NeverScrollableScrollPhysics(),
+          child: Padding(
+              padding: const EdgeInsets.all(20),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  ListTile(
+                    
+                    shape: RoundedRectangleBorder(
+                      
+                      side: BorderSide(width: 1, color: _selectedBordeColor),
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const JudgeSignUpForm1()));
+                    },
+                    title: const Text("My Case"),
+                    subtitle: const Text("See your previous record in court"),
+                    leading: Container(
+
+                      height: 50,
+                      width: 50,
+                      decoration: BoxDecoration(
+
+                          color: _circle,
+                          borderRadius: BorderRadius.circular(100)),
+
+                      child: Icon(
+                        Icons.perm_identity_sharp,
+                        color: _selectedBordeColor,
+                      ),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  ListTile(
+                    shape: RoundedRectangleBorder(
+                      side: BorderSide(width: 1, color: _bordeColor),
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    onTap: () {},
+                    title: const Text("Case Progress"),
+                    subtitle:
+                        const Text("Check progress of your case in Court"),
+                    leading: Container(
+                      //color: Colors.green,
+                      height: 50,
+                      width: 50,
+
+                      decoration: BoxDecoration(
+                          color: _circle,
+                          borderRadius: BorderRadius.circular(100)),
+
+                      child: Icon(
+                        Icons.label_important,
+                        color: _selectedBordeColor,
+                      ),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  ListTile(
+                    // Local User  Button
+                    shape: RoundedRectangleBorder(
+                      side: BorderSide(width: 1, color: _bordeColor),
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    title: const Text("File new case"),
+                    subtitle:
+                        const Text("File new case if you have any problem"),
+                    leading: Container(
+                      //color: Colors.green,
+                      height: 50,
+                      width: 50,
+
+                      decoration: BoxDecoration(
+                          color: _circle,
+                          borderRadius: BorderRadius.circular(100)),
+
+                      child: Icon(
+                        Icons.people_rounded,
+                        color: _selectedBordeColor,
+                      ),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  ListTile(
+                    // Local User  Button
+                    shape: RoundedRectangleBorder(
+                      side: BorderSide(width: 1, color: _bordeColor),
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    title: const Text("Complaint"),
+                    subtitle: const Text("Yes enter sexy text here"),
+                    leading: Container(
+                      //color: Colors.green,
+                      height: 50,
+                      width: 50,
+
+                      decoration: BoxDecoration(
+                          color: _circle,
+                          borderRadius: BorderRadius.circular(100)),
+
+                      child: Icon(
+                        Icons.people_rounded,
+                        color: _selectedBordeColor,
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height: 25),
+                  RoundButton(
+                      title: 'Next',
+                      loading: loading,
+                      height: 50,
+                      width: 450,
+                      onTap: () {
+                        setState(() {
+                          loading = true;
+                        });
+                      }),
+                  const SizedBox(height: 100),
+                ],
+              )),
+        ),

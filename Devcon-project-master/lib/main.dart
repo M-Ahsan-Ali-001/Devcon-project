@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:untitled8/Components/SignUp_page.dart';
-import 'Components/JugeSignUp/Juge_sign_up_from_1.dart';
 import 'Components/opening.dart';
 import 'Components/signin_page.dart';
 
